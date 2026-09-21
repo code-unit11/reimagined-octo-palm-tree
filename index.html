@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Guidance AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>CareerAI</h2>
+                <span>Your Career Companion</span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+
+            <p class="section-title">EXPLORE</p>
+
+            <button class="side-btn active">
+                <span>💬</span>
+                Career Assistant
+            </button>
+
+            <button class="side-btn">
+                <span>🎯</span>
+                Career Paths
+            </button>
+
+            <button class="side-btn">
+                <span>💻</span>
+                Skills & Courses
+            </button>
+
+            <button class="side-btn">
+                <span>📈</span>
+                Career Growth
+            </button>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+                <div class="help-icon">💡</div>
+
+                <div>
+                    <strong>Need guidance?</strong>
+                    <p>Ask anything about your career.</p>
+                </div>
+            </div>
+
+            <a href="/logout" class="logout">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Application -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div>
+                <div class="status">
+                    <span class="status-dot"></span>
+                    AI Career Assistant
+                </div>
+
+                <h1>Career Guidance</h1>
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-btn" title="Notifications">
+                    🔔
+                </button>
+
+                <div class="profile">
+                    <div class="avatar">C</div>
+
+                    <div>
+                        <strong>Career Explorer</strong>
+                        <span>Student</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Chat Area -->
+        <section class="chat-container">
+
+            <div id="chat-box" class="chat-box">
+
+                <!-- Welcome Screen -->
+                <div class="welcome">
+
+                    <div class="welcome-icon">
+                        ✦
+                    </div>
+
+                    <p class="welcome-label">
+                        YOUR PERSONAL CAREER ASSISTANT
+                    </p>
+
+                    <h2>
+                        Build the career<br>
+                        <span>you actually want.</span>
+                    </h2>
+
+                    <p class="welcome-text">
+                        Ask me about careers, programming, data science,
+                        skills, courses, interviews, or your career roadmap.
+                    </p>
+
+
+                    <!-- Suggestions -->
+                    <div class="suggestions">
+
+                        <button onclick="quickAsk('How do I start a career in Data Science?')">
+                            <span>📊</span>
+                            Data Science roadmap
+                        </button>
+
+                        <button onclick="quickAsk('What skills are required for a Software Engineer?')">
+                            <span>💻</span>
+                            Software Engineering
+                        </button>
+
+                        <button onclick="quickAsk('What Python skills should I learn?')">
+                            <span>🐍</span>
+                            Learn Python
+                        </button>
+
+                        <button onclick="quickAsk('Which career is best for me?')">
+                            <span>🎯</span>
+                            Find my career path
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Input -->
+            <div class="input-wrapper">
+
+                <div class="input-box">
+
+                    <button class="plus-btn">
+                        +
+                    </button>
+
+                    <input
+                        type="text"
+                        id="msg"
+                        name="msg"
+                        placeholder="Ask anything about your career..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        class="send-btn"
+                        onclick="send()"
+                        aria-label="Send message"
+                    >
+                        ↑
+                    </button>
+
+                </div>
+
+                <p class="input-note">
+                    CareerAI can make mistakes. Always verify important career information.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- Hidden API output -->
+<div id="output" style="display:none;"></div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+```

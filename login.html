@@ -1,0 +1,145 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | CareerAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="login-page">
+
+<div class="login-background">
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+
+    <div class="login-card">
+
+        <div class="login-logo">
+            ✦
+        </div>
+
+        <p class="login-label">
+            WELCOME BACK
+        </p>
+
+        <h1>
+            Continue your<br>
+            <span>career journey.</span>
+        </h1>
+
+        <p class="login-description">
+            Sign in to access your personal CareerAI assistant
+            and continue exploring your future.
+        </p>
+
+
+        <form action="{{ url_for('login') }}" method="POST">
+
+            <div class="field">
+
+                <label>Username</label>
+
+                <div class="input-field">
+                    <span>👤</span>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>Password</label>
+
+                <div class="input-field">
+
+                    <span>🔒</span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword()"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="login-button">
+                Sign In
+                <span>→</span>
+            </button>
+
+        </form>
+
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+
+        <div class="login-footer">
+            <span>CareerAI</span>
+            <span>•</span>
+            <span>Your future starts here.</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function togglePassword() {
+
+    const password =
+        document.getElementById("password");
+
+    if (password.type === "password") {
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+```
